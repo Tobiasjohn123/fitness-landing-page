@@ -127,6 +127,20 @@ h1, h2, h3, h4, h5, h6 {
   user-select: none;
 }
 
+
+@media (min-width: 769px) {
+  .nav-links {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    opacity: 1;
+    flex-direction: row;
+    padding: 0;
+    background: transparent;
+    display: flex;
+  }
+}
+
 .nav-links li {
   list-style: none;
 }
@@ -193,24 +207,31 @@ li a:hover {
     display: flex;
   }
 
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #0f0f0f;
-    flex-direction: column;
-    padding: 2.5rem 0 2rem 0;
-    gap: 1.5rem;
-    cursor: pointer;
-     user-select: none;
-     
-  }
+.nav-links {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(0, 212, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  flex-direction: column;
+  gap: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+}
 
-  .nav-links.open {
-    display: flex;
-  }
+.nav-links.open {
+  max-height: 400px;
+  opacity: 1;
+  padding: 2.5rem 0 2rem 0;
+}
 
 }
 
